@@ -35,7 +35,7 @@ class ItemStore {
     //------------------------------------------------------------------------------------------------
     
     @discardableResult func createItem() -> Item {
-        let newItem = Item(random: true)
+        let newItem = Item(new: true)
         
         allItems.append(newItem)
         
@@ -63,16 +63,7 @@ class ItemStore {
         allItems.remove(at: fromIndex)
         
         // Insert item in array at new location
-        allItems.insert(movedItem, at: toIndex) }
-    
-    //------------------------------------------------------------------------------------------------
-    
-//    init() {
-//        for _ in 0..<5 {
-//            createItem()
-//        }
-//    }
-    
-    //------------------------------------------------------------------------------------------------
+        allItems.insert(movedItem, at: toIndex)
+    }
     
 }

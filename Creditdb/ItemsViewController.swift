@@ -82,15 +82,15 @@ class ItemsViewController: UITableViewController {
         
 //        var cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
         
+        //Prototype cell type 2
         if (item.valueInDollars > 100) {
-            print("test1")
             let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell2", for: indexPath) as! ItemCell2
             cell.nameLabel.text = item.name
             cell.cardNumberLabel.text = item.cardNumber
             cell.valueLabel.text = "$\(item.valueInDollars)"
             return cell
+        //Prototype cell type 1
         } else {
-            print("test2")
             let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
             cell.nameLabel.text = item.name
             cell.cardNumberLabel.text = item.cardNumber

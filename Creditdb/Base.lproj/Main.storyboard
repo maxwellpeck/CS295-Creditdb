@@ -207,8 +207,41 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2LO-QT-6x9">
+                                        <rect key="frame" x="0.0" y="168" width="398" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CVV Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gn-IS-6Y1">
+                                                <rect key="frame" x="0.0" y="0.0" width="103" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="utg-Ws-AAV">
+                                                <rect key="frame" x="111" y="0.0" width="287" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="sPn-0m-uiy" id="stz-Ok-6W6"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cee-yD-Li8">
+                                        <rect key="frame" x="0.0" y="210" width="398" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiration Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wm2-GN-ODA">
+                                                <rect key="frame" x="0.0" y="0.0" width="398" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="22u-Zr-6E8">
+                                        <rect key="frame" x="0.0" y="239" width="398" height="216"/>
+                                    </datePicker>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfJ-zA-v4P">
-                                        <rect key="frame" x="0.0" y="168" width="398" height="572"/>
+                                        <rect key="frame" x="0.0" y="462.5" width="398" height="277.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -229,6 +262,7 @@
                                 <constraints>
                                     <constraint firstItem="VpP-CE-qdT" firstAttribute="leading" secondItem="6bp-sv-yC3" secondAttribute="leading" id="7R3-wM-KdZ"/>
                                     <constraint firstItem="faj-Re-i0y" firstAttribute="leading" secondItem="VpP-CE-qdT" secondAttribute="leading" id="Oan-UT-vhZ"/>
+                                    <constraint firstItem="utg-Ws-AAV" firstAttribute="leading" secondItem="VpP-CE-qdT" secondAttribute="leading" id="bOD-qS-38o"/>
                                     <constraint firstItem="JrZ-cK-IxK" firstAttribute="leading" secondItem="VpP-CE-qdT" secondAttribute="leading" id="r28-3n-o4i"/>
                                 </constraints>
                             </stackView>
@@ -251,7 +285,9 @@
                         <outlet property="bankField" destination="faj-Re-i0y" id="lQe-Ox-aMa"/>
                         <outlet property="cardNumberField" destination="VpP-CE-qdT" id="zgF-Q6-EHQ"/>
                         <outlet property="dateLabel" destination="VfJ-zA-v4P" id="bM8-CA-AWD"/>
+                        <outlet property="expirationPicker" destination="22u-Zr-6E8" id="ylB-Dv-Rik"/>
                         <outlet property="nameField" destination="JrZ-cK-IxK" id="O1a-ba-8mo"/>
+                        <outlet property="securityCodeField" destination="utg-Ws-AAV" id="BRd-7u-xnr"/>
                         <outlet property="valueField" destination="6bp-sv-yC3" id="DZM-iQ-BBU"/>
                     </connections>
                 </viewController>

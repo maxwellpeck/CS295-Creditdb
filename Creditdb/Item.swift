@@ -17,18 +17,20 @@ class Item: NSObject, NSCoding {
     let dateCreated: Date
     var bank: String
     var deleted: Bool
+    var securityCode: String
+    var expiration: Date
     
     //------------------------------------------------------------------------------------------------
     
     required init(coder aDecoder: NSCoder) {
         name = aDecoder.decodeObject(forKey: "name") as! String
         dateCreated = aDecoder.decodeObject(forKey: "dateCreated") as! Date
-        //        itemKey = aDecoder.decodeObject(forKey: "itemKey") as! String
         cardNumber = aDecoder.decodeObject(forKey: "cardNumber") as! String?
         valueInDollars = aDecoder.decodeInteger(forKey: "valueInDollars")
         bank = aDecoder.decodeObject(forKey: "bank") as! String
-//        bank = ""
         deleted = false
+        securityCode = aDecoder.decodeObject(forKey: "securityCode") as! String
+        expiration = aDecoder.decodeObject(forKey: "expiration") as! Date
         super.init() }
     
     //------------------------------------------------------------------------------------------------
@@ -36,47 +38,38 @@ class Item: NSObject, NSCoding {
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: "name")
         aCoder.encode(dateCreated, forKey: "dateCreated")
-        //        aCoder.encode(itemKey, forKey: "itemKey")
         aCoder.encode(cardNumber, forKey: "cardNumber")
         aCoder.encode(valueInDollars, forKey: "valueInDollars")
         aCoder.encode(bank, forKey: "bank")
+        aCoder.encode(securityCode, forKey: "securityCode")
+        aCoder.encode(expiration, forKey: "expiration")
     }
     
     //------------------------------------------------------------------------------------------------
     
-    init(name: String, cardNumber: String?, valueInDollars: Int, deleted: Bool, bank: String) {
+    init(name: String, cardNumber: String?, valueInDollars: Int, deleted: Bool, bank: String, securityCode: String, expiration: Date) {
         self.name = name
         self.valueInDollars = valueInDollars
         self.cardNumber = cardNumber
         self.dateCreated = Date()
         self.deleted = deleted
         self.bank = bank
+        self.securityCode = securityCode
+        self.expiration = expiration
         
         super.init()
     }
     
     //------------------------------------------------------------------------------------------------
     
-    convenience init(random: Bool = false) {
-        if random {
-            let adjectives = ["Discover", "Mastercard", "Visa"]
-            let nouns = ["Credit", "Debit", "Gift Card"]
-            
-            var idx = arc4random_uniform(UInt32(adjectives.count))
-            let randomAdjective = adjectives[Int(idx)]
-            
-            idx = arc4random_uniform(UInt32(nouns.count))
-            let randomNoun = nouns[Int(idx)]
-            
-            let randomName = "\(randomAdjective) \(randomNoun)"
-            let randomValue = Int(arc4random_uniform(100))
-            let randomcardNumber = String(Int.random(in: 1000000000000000 ..< 10000000000000000))
+    convenience init(new: Bool = false) {
+        if new {
             
             self.init(name: "New Card",
-                      cardNumber: randomcardNumber,
-                      valueInDollars: 0, deleted: false, bank: "bank")
+                      cardNumber: "0000000000000000",
+                      valueInDollars: 0, deleted: false, bank: "Bank Name", securityCode: "000", expiration: Date())
         } else {
-            self.init(name: "", cardNumber: nil, valueInDollars: 0, deleted: false, bank: "bank")
+            self.init(name: "", cardNumber: nil, valueInDollars: 0, deleted: false, bank: "", securityCode: "", expiration: Date())
         }
     }
 }
