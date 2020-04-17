@@ -59,6 +59,49 @@
                                     <segue destination="sPn-0m-uiy" kind="show" identifier="showItem" id="Ma1-pv-TQq"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell2" rowHeight="65" id="xyL-HJ-O0S" userLabel="ItemCell2" customClass="ItemCell2" customModule="Creditdb" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="93" width="414" height="65"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xyL-HJ-O0S" id="rfm-r7-WzS" userLabel="Content View 2">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VtF-uP-rFM" userLabel="Name Label">
+                                            <rect key="frame" x="20" y="7" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyh-7S-tSE" userLabel="Card Number Label">
+                                            <rect key="frame" x="20" y="36" width="31" height="15"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                            <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lF9-dK-SBe" userLabel="Value Label">
+                                            <rect key="frame" x="352" y="22" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="lF9-dK-SBe" secondAttribute="trailing" constant="20" id="C1a-Db-Yzh"/>
+                                        <constraint firstItem="hyh-7S-tSE" firstAttribute="leading" secondItem="VtF-uP-rFM" secondAttribute="leading" id="SRa-Kh-h4K"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="hyh-7S-tSE" secondAttribute="bottom" constant="3" id="StP-Jy-Fsp"/>
+                                        <constraint firstItem="VtF-uP-rFM" firstAttribute="top" secondItem="rfm-r7-WzS" secondAttribute="top" constant="7" id="Yp5-re-lwZ"/>
+                                        <constraint firstItem="hyh-7S-tSE" firstAttribute="top" secondItem="VtF-uP-rFM" secondAttribute="bottom" constant="8" id="lsU-nM-hOM"/>
+                                        <constraint firstItem="VtF-uP-rFM" firstAttribute="leading" secondItem="rfm-r7-WzS" secondAttribute="leading" constant="20" id="ndH-3G-aNw"/>
+                                        <constraint firstItem="lF9-dK-SBe" firstAttribute="centerY" secondItem="rfm-r7-WzS" secondAttribute="centerY" id="tZW-lm-C2c"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cardNumberLabel" destination="hyh-7S-tSE" id="w71-B8-thG"/>
+                                    <outlet property="nameLabel" destination="VtF-uP-rFM" id="iZ2-Lk-BwS"/>
+                                    <outlet property="valueLabel" destination="lF9-dK-SBe" id="Sfg-n9-Peh"/>
+                                    <segue destination="sPn-0m-uiy" kind="show" identifier="showItem" id="0Lu-wE-sgX"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="phZ-1e-Cfi" id="5oL-JQ-56K"/>
@@ -91,7 +134,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JVf-ol-WTK">
                                         <rect key="frame" x="0.0" y="0.0" width="398" height="34"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEo-N5-aaI">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEo-N5-aaI">
                                                 <rect key="frame" x="0.0" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -129,7 +172,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vgx-WR-Gxe">
                                         <rect key="frame" x="0.0" y="84" width="398" height="34"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JgM-QG-6S4">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JgM-QG-6S4">
                                                 <rect key="frame" x="0.0" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -240,4 +283,7 @@
             <point key="canvasLocation" x="134.78260869565219" y="130.58035714285714"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="0Lu-wE-sgX"/>
+    </inferredMetricsTieBreakers>
 </document>
