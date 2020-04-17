@@ -15,6 +15,7 @@ class Item: NSObject, NSCoding {
     var valueInDollars: Int
     var cardNumber: String?
     let dateCreated: Date
+    var bank: String
     var deleted: Bool
     
     //------------------------------------------------------------------------------------------------
@@ -25,6 +26,8 @@ class Item: NSObject, NSCoding {
         //        itemKey = aDecoder.decodeObject(forKey: "itemKey") as! String
         cardNumber = aDecoder.decodeObject(forKey: "cardNumber") as! String?
         valueInDollars = aDecoder.decodeInteger(forKey: "valueInDollars")
+        bank = aDecoder.decodeObject(forKey: "bank") as! String
+//        bank = ""
         deleted = false
         super.init() }
     
@@ -35,16 +38,19 @@ class Item: NSObject, NSCoding {
         aCoder.encode(dateCreated, forKey: "dateCreated")
         //        aCoder.encode(itemKey, forKey: "itemKey")
         aCoder.encode(cardNumber, forKey: "cardNumber")
-        aCoder.encode(valueInDollars, forKey: "valueInDollars") }
+        aCoder.encode(valueInDollars, forKey: "valueInDollars")
+        aCoder.encode(bank, forKey: "bank")
+    }
     
     //------------------------------------------------------------------------------------------------
     
-    init(name: String, cardNumber: String?, valueInDollars: Int, deleted: Bool) {
+    init(name: String, cardNumber: String?, valueInDollars: Int, deleted: Bool, bank: String) {
         self.name = name
         self.valueInDollars = valueInDollars
         self.cardNumber = cardNumber
         self.dateCreated = Date()
         self.deleted = deleted
+        self.bank = bank
         
         super.init()
     }
@@ -66,11 +72,11 @@ class Item: NSObject, NSCoding {
             let randomValue = Int(arc4random_uniform(100))
             let randomcardNumber = String(Int.random(in: 1000000000000000 ..< 10000000000000000))
             
-            self.init(name: randomName,
+            self.init(name: "New Card",
                       cardNumber: randomcardNumber,
-                      valueInDollars: randomValue, deleted: false)
+                      valueInDollars: 0, deleted: false, bank: "bank")
         } else {
-            self.init(name: "", cardNumber: nil, valueInDollars: 0, deleted: false)
+            self.init(name: "", cardNumber: nil, valueInDollars: 0, deleted: false, bank: "bank")
         }
     }
 }

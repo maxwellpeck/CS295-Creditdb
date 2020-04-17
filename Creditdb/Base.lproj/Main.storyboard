@@ -145,8 +145,27 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uzC-j7-s67">
+                                        <rect key="frame" x="0.0" y="126" width="398" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gm4-RD-Qsr">
+                                                <rect key="frame" x="0.0" y="0.0" width="103" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="faj-Re-i0y">
+                                                <rect key="frame" x="111" y="0.0" width="287" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="sPn-0m-uiy" id="MDZ-XZ-tJn"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfJ-zA-v4P">
-                                        <rect key="frame" x="0.0" y="126" width="398" height="614"/>
+                                        <rect key="frame" x="0.0" y="168" width="398" height="572"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -166,6 +185,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="VpP-CE-qdT" firstAttribute="leading" secondItem="6bp-sv-yC3" secondAttribute="leading" id="7R3-wM-KdZ"/>
+                                    <constraint firstItem="faj-Re-i0y" firstAttribute="leading" secondItem="VpP-CE-qdT" secondAttribute="leading" id="Oan-UT-vhZ"/>
                                     <constraint firstItem="JrZ-cK-IxK" firstAttribute="leading" secondItem="VpP-CE-qdT" secondAttribute="leading" id="r28-3n-o4i"/>
                                 </constraints>
                             </stackView>
@@ -185,6 +205,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="GEm-Hh-3yw"/>
                     <connections>
+                        <outlet property="bankField" destination="faj-Re-i0y" id="lQe-Ox-aMa"/>
                         <outlet property="cardNumberField" destination="VpP-CE-qdT" id="zgF-Q6-EHQ"/>
                         <outlet property="dateLabel" destination="VfJ-zA-v4P" id="bM8-CA-AWD"/>
                         <outlet property="nameField" destination="JrZ-cK-IxK" id="O1a-ba-8mo"/>

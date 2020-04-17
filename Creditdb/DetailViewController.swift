@@ -16,6 +16,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var cardNumberField: UITextField!
     @IBOutlet var valueField: UITextField!
     @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var bankField: UITextField!
+    
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
@@ -72,6 +74,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         // "Save" changes to item
         item.name = nameField.text ?? ""
         item.cardNumber = cardNumberField.text
+        item.bank = bankField.text ?? ""
         if let valueText = valueField.text,
             let value = numberFormatter.number(from: valueText) {
             item.valueInDollars = value.intValue
@@ -107,6 +110,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         valueField.text =
             numberFormatter.string(from: NSNumber(value: item.valueInDollars))
         dateLabel.text = dateFormatter.string(from: item.dateCreated)
+        bankField.text = item.bank
         
     }
     
