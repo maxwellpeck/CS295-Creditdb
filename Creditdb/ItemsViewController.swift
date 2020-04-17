@@ -26,7 +26,27 @@ class ItemsViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+        
+        //Keep track of which row # an item needs to be deleted at:
+        var rowNum = 0
+        
+        //Loop through all ites:
+        for item in itemStore.allItems {
+            
+            //Check if it was marked as "deleted" in DetailView
+            if (item.deleted == true) {
+                
+                // Remove the item from the store
+                itemStore.removeItem(item)
+                
+                // Also remove that row from the table view with an animation
+                let indexPath = IndexPath(row: rowNum, section: 0)
+                self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+            rowNum += 1
+        }
     }
+    
     //------------------------------------------------------------------------------------------------
     
     @IBAction func addNewItem(_ sender: UIBarButtonItem) {
@@ -77,6 +97,7 @@ class ItemsViewController: UITableViewController {
         
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 65
+        
     }
     
     //------------------------------------------------------------------------------------------------

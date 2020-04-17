@@ -146,11 +146,23 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfJ-zA-v4P">
-                                        <rect key="frame" x="0.0" y="126" width="398" height="666"/>
+                                        <rect key="frame" x="0.0" y="126" width="398" height="614"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bkT-s3-pih">
+                                        <rect key="frame" x="0.0" y="748" width="398" height="44"/>
+                                        <items>
+                                            <navigationItem title="Details" id="NQR-BY-YhJ">
+                                                <barButtonItem key="rightBarButtonItem" systemItem="trash" id="QBR-vU-XuX">
+                                                    <connections>
+                                                        <action selector="deleteFromDetail:" destination="sPn-0m-uiy" id="9G0-1D-VL8"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="VpP-CE-qdT" firstAttribute="leading" secondItem="6bp-sv-yC3" secondAttribute="leading" id="7R3-wM-KdZ"/>

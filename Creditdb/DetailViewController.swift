@@ -35,6 +35,36 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     
     //------------------------------------------------------------------------------------------------
     
+    @IBAction func deleteFromDetail(_ sender: UIBarButtonItem) {
+//        let item = itemStore.allItems[indexPath.row]
+        
+        let title = "Delete \(item.name)?"
+        let message = "Are you sure you want to delete this item?"
+        
+        let ac = UIAlertController(title: title, message: message,
+                                   preferredStyle: .actionSheet)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        ac.addAction(cancelAction)
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { (action) -> Void in
+            
+            // Remove the item from the store
+//            itemStore.removeItem(item)
+//
+//            // Also remove that row from the table view with an animation
+//            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            self.item.deleted = true
+            self.navigationController?.popViewController(animated: true)
+        })
+        ac.addAction(deleteAction)
+        
+        // Present the alert controller
+        present(ac, animated: true, completion: nil)
+    }
+    
+    //------------------------------------------------------------------------------------------------
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // Clear first responder

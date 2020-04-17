@@ -15,6 +15,7 @@ class Item: NSObject, NSCoding {
     var valueInDollars: Int
     var cardNumber: String?
     let dateCreated: Date
+    var deleted: Bool
     
     //------------------------------------------------------------------------------------------------
     
@@ -24,6 +25,7 @@ class Item: NSObject, NSCoding {
         //        itemKey = aDecoder.decodeObject(forKey: "itemKey") as! String
         cardNumber = aDecoder.decodeObject(forKey: "cardNumber") as! String?
         valueInDollars = aDecoder.decodeInteger(forKey: "valueInDollars")
+        deleted = false
         super.init() }
     
     //------------------------------------------------------------------------------------------------
@@ -37,11 +39,12 @@ class Item: NSObject, NSCoding {
     
     //------------------------------------------------------------------------------------------------
     
-    init(name: String, cardNumber: String?, valueInDollars: Int) {
+    init(name: String, cardNumber: String?, valueInDollars: Int, deleted: Bool) {
         self.name = name
         self.valueInDollars = valueInDollars
         self.cardNumber = cardNumber
         self.dateCreated = Date()
+        self.deleted = deleted
         
         super.init()
     }
@@ -65,9 +68,9 @@ class Item: NSObject, NSCoding {
             
             self.init(name: randomName,
                       cardNumber: randomcardNumber,
-                      valueInDollars: randomValue)
+                      valueInDollars: randomValue, deleted: false)
         } else {
-            self.init(name: "", cardNumber: nil, valueInDollars: 0)
+            self.init(name: "", cardNumber: nil, valueInDollars: 0, deleted: false)
         }
     }
 }
