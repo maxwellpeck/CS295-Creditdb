@@ -19,6 +19,7 @@ class Item: NSObject, NSCoding {
     var deleted: Bool
     var securityCode: String
     var expiration: Date
+    var creditCard: Bool
     
     //------------------------------------------------------------------------------------------------
     
@@ -31,6 +32,8 @@ class Item: NSObject, NSCoding {
         deleted = false
         securityCode = aDecoder.decodeObject(forKey: "securityCode") as! String
         expiration = aDecoder.decodeObject(forKey: "expiration") as! Date
+//        creditCard = aDecoder.decodeObject(forKey: "creditCard") as! Bool
+        creditCard = true
         super.init() }
     
     //------------------------------------------------------------------------------------------------
@@ -43,11 +46,12 @@ class Item: NSObject, NSCoding {
         aCoder.encode(bank, forKey: "bank")
         aCoder.encode(securityCode, forKey: "securityCode")
         aCoder.encode(expiration, forKey: "expiration")
+        aCoder.encode(creditCard, forKey: "creditCard")
     }
     
     //------------------------------------------------------------------------------------------------
     
-    init(name: String, cardNumber: String?, valueInDollars: Int, deleted: Bool, bank: String, securityCode: String, expiration: Date) {
+    init(name: String, cardNumber: String?, valueInDollars: Int, deleted: Bool, bank: String, securityCode: String, expiration: Date, creditCard: Bool) {
         self.name = name
         self.valueInDollars = valueInDollars
         self.cardNumber = cardNumber
@@ -56,6 +60,7 @@ class Item: NSObject, NSCoding {
         self.bank = bank
         self.securityCode = securityCode
         self.expiration = expiration
+        self.creditCard = creditCard
         
         super.init()
     }
@@ -67,9 +72,9 @@ class Item: NSObject, NSCoding {
             
             self.init(name: "New Card",
                       cardNumber: "0000000000000000",
-                      valueInDollars: 0, deleted: false, bank: "Bank Name", securityCode: "000", expiration: Date())
+                      valueInDollars: 0, deleted: false, bank: "Bank Name", securityCode: "000", expiration: Date(), creditCard: true)
         } else {
-            self.init(name: "", cardNumber: nil, valueInDollars: 0, deleted: false, bank: "", securityCode: "", expiration: Date())
+            self.init(name: "", cardNumber: nil, valueInDollars: 0, deleted: false, bank: "", securityCode: "", expiration: Date(), creditCard: true)
         }
     }
 }

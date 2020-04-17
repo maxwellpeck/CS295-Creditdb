@@ -19,6 +19,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var bankField: UITextField!
     @IBOutlet var securityCodeField: UITextField!
     @IBOutlet var expirationPicker: UIDatePicker!
+    @IBOutlet var creditCardPicker: UISwitch!
     
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
@@ -40,7 +41,6 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     //------------------------------------------------------------------------------------------------
     
     @IBAction func deleteFromDetail(_ sender: UIBarButtonItem) {
-//        let item = itemStore.allItems[indexPath.row]
         
         let title = "Delete \(item.name)?"
         let message = "Are you sure you want to delete this item?"
@@ -51,13 +51,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         ac.addAction(cancelAction)
         
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { (action) -> Void in
-            
-            // Remove the item from the store
-//            itemStore.removeItem(item)
-//
-//            // Also remove that row from the table view with an animation
-//            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: {
+            (action) -> Void in
             self.item.deleted = true
             self.navigationController?.popViewController(animated: true)
         })
@@ -79,6 +74,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         item.bank = bankField.text ?? ""
         item.securityCode = securityCodeField.text ?? ""
         item.expiration = expirationPicker.date
+        item.creditCard = creditCardPicker.isOn
         if let valueText = valueField.text,
             let value = numberFormatter.number(from: valueText) {
             item.valueInDollars = value.intValue
@@ -113,10 +109,11 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         cardNumberField.text = item.cardNumber
         valueField.text =
             numberFormatter.string(from: NSNumber(value: item.valueInDollars))
-        dateLabel.text = dateFormatter.string(from: item.dateCreated)
+        dateLabel.text = "Date Added: " + dateFormatter.string(from: item.dateCreated)
         bankField.text = item.bank
         securityCodeField.text = item.securityCode
         expirationPicker.date = item.expiration
+        creditCardPicker.isOn = item.creditCard
     }
     
     //------------------------------------------------------------------------------------------------
