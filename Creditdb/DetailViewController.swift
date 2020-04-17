@@ -10,6 +10,7 @@ import UIKit
 
 //====================================================================================================
 
+//DetailViewController: Manages detail view
 class DetailViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var nameField: UITextField!
@@ -42,23 +43,23 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func deleteFromDetail(_ sender: UIBarButtonItem) {
         
+        //Configure an alert to ask user to be sure of deletion decision:
         let title = "Delete \(item.name)?"
         let message = "Are you sure you want to delete this item?"
-        
         let ac = UIAlertController(title: title, message: message,
                                    preferredStyle: .actionSheet)
-        
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         ac.addAction(cancelAction)
-        
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: {
             (action) -> Void in
+            //Mark the card (Item) for deletion upon master reload by setting item.deleted to true:
             self.item.deleted = true
+            //Exit detail view and go back to master view:
             self.navigationController?.popViewController(animated: true)
         })
         ac.addAction(deleteAction)
         
-        // Present the alert controller
+        //Present the alert controller
         present(ac, animated: true, completion: nil)
     }
     

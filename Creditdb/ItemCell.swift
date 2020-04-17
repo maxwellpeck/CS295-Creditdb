@@ -10,12 +10,12 @@ import UIKit
 
 //====================================================================================================
 
+//ItemCell Class: Used if card (Item) is marked as a credit card
 class ItemCell: UITableViewCell {
     
     //------------------------------------------------------------------------------------------------
     
     @IBOutlet var nameLabel: UILabel!
-    
     @IBOutlet var bankAndExpDate: UILabel!
     @IBOutlet var valueLabel: UILabel!
     

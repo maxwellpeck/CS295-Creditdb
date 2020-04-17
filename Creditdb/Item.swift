@@ -10,6 +10,7 @@ import UIKit
 
 //================================================================================================
 
+//Item class: Each card/bank item is represented by an Item object.
 class Item: NSObject, NSCoding {
     var name: String
     var valueInDollars: Int

@@ -10,6 +10,7 @@ import UIKit
 
 //====================================================================================================
 
+//ItemStore Class: ItemStore manages the organization and storage of the Item (card) objects.
 class ItemStore {
     
     var allItems = [Item]()

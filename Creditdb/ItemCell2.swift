@@ -10,6 +10,7 @@ import UIKit
 
 //====================================================================================================
 
+//ItemCell2 Class: Used if card (Item) is not marked as a credit card
 class ItemCell2: UITableViewCell {
     
     //------------------------------------------------------------------------------------------------
@@ -21,7 +22,6 @@ class ItemCell2: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         nameLabel.adjustsFontForContentSizeCategory = true
         bankAndExpDate.adjustsFontForContentSizeCategory = true
     }
