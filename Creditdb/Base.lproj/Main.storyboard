@@ -23,20 +23,20 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="470-gM-JfW">
-                                            <rect key="frame" x="20" y="7" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="470-gM-JfW">
+                                            <rect key="frame" x="20" y="7" width="118" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRy-4n-CV6">
-                                            <rect key="frame" x="20" y="36" width="31" height="15"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Credit Card • Expiration Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRy-4n-CV6">
+                                            <rect key="frame" x="20" y="36" width="164" height="15"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                             <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRh-id-mxm">
-                                            <rect key="frame" x="352" y="22" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$Credit Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRh-id-mxm">
+                                            <rect key="frame" x="271" y="22" width="123" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -53,7 +53,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="cardNumberLabel" destination="jRy-4n-CV6" id="bYu-jy-Zer"/>
+                                    <outlet property="bankAndExpDate" destination="jRy-4n-CV6" id="TJ9-3n-drX"/>
                                     <outlet property="nameLabel" destination="470-gM-JfW" id="lTB-jm-JJZ"/>
                                     <outlet property="valueLabel" destination="gRh-id-mxm" id="9SL-D4-07f"/>
                                     <segue destination="sPn-0m-uiy" kind="show" identifier="showItem" id="Ma1-pv-TQq"/>
@@ -66,39 +66,30 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VtF-uP-rFM" userLabel="Name Label">
-                                            <rect key="frame" x="20" y="7" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                            <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyh-7S-tSE" userLabel="Card Number Label">
-                                            <rect key="frame" x="20" y="36" width="31" height="15"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                            <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lF9-dK-SBe" userLabel="Value Label">
-                                            <rect key="frame" x="352" y="22" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VtF-uP-rFM" userLabel="Name Label">
+                                            <rect key="frame" x="20" y="7" width="118" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Bank Name Debit Card • Expiration Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyh-7S-tSE" userLabel="Card Number Label">
+                                            <rect key="frame" x="20" y="36" width="227" height="15"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                            <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="lF9-dK-SBe" secondAttribute="trailing" constant="20" id="C1a-Db-Yzh"/>
                                         <constraint firstItem="hyh-7S-tSE" firstAttribute="leading" secondItem="VtF-uP-rFM" secondAttribute="leading" id="SRa-Kh-h4K"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="hyh-7S-tSE" secondAttribute="bottom" constant="3" id="StP-Jy-Fsp"/>
                                         <constraint firstItem="VtF-uP-rFM" firstAttribute="top" secondItem="rfm-r7-WzS" secondAttribute="top" constant="7" id="Yp5-re-lwZ"/>
                                         <constraint firstItem="hyh-7S-tSE" firstAttribute="top" secondItem="VtF-uP-rFM" secondAttribute="bottom" constant="8" id="lsU-nM-hOM"/>
                                         <constraint firstItem="VtF-uP-rFM" firstAttribute="leading" secondItem="rfm-r7-WzS" secondAttribute="leading" constant="20" id="ndH-3G-aNw"/>
-                                        <constraint firstItem="lF9-dK-SBe" firstAttribute="centerY" secondItem="rfm-r7-WzS" secondAttribute="centerY" id="tZW-lm-C2c"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="cardNumberLabel" destination="hyh-7S-tSE" id="w71-B8-thG"/>
+                                    <outlet property="bankAndExpDate" destination="hyh-7S-tSE" id="fPX-gB-cOw"/>
                                     <outlet property="nameLabel" destination="VtF-uP-rFM" id="iZ2-Lk-BwS"/>
-                                    <outlet property="valueLabel" destination="lF9-dK-SBe" id="Sfg-n9-Peh"/>
                                     <segue destination="sPn-0m-uiy" kind="show" identifier="showItem" id="0Lu-wE-sgX"/>
                                 </connections>
                             </tableViewCell>
@@ -254,14 +245,14 @@
                                             </switch>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If this entry is a credit card, use Credit Card Mode so you can keep track of your balance in the detail view." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQL-H6-0WZ">
-                                        <rect key="frame" x="0.0" y="507.5" width="398" height="36"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Credit Card Mode so you can view your balance and card details at a glance in the detail view.  Turn off for debit cards" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQL-H6-0WZ">
+                                        <rect key="frame" x="0.0" y="507.5" width="398" height="54"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfJ-zA-v4P">
-                                        <rect key="frame" x="0.0" y="553.5" width="398" height="184.5"/>
+                                        <rect key="frame" x="0.0" y="571.5" width="398" height="166.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

@@ -80,21 +80,28 @@ class ItemsViewController: UITableViewController {
         // will appear in on the tableview
         let item = itemStore.allItems[indexPath.row]
         
-//        var cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/YY"
         
         //Prototype cell type 2
-        if (item.valueInDollars > 100) {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell2", for: indexPath) as! ItemCell2
+        if (item.creditCard) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
             cell.nameLabel.text = item.name
-            cell.cardNumberLabel.text = item.cardNumber
+            cell.bankAndExpDate.text = "Credit Card" + " \u{2022} " + dateFormatter.string(from:item.expiration)
             cell.valueLabel.text = "$\(item.valueInDollars)"
+            if (item.valueInDollars >= 5000) {
+                cell.valueLabel.textColor = .red
+            } else if (item.valueInDollars == 0) {
+                cell.valueLabel.textColor = .systemGreen
+            } else {
+                cell.valueLabel.textColor = .black
+            }
             return cell
         //Prototype cell type 1
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell2", for: indexPath) as! ItemCell2
             cell.nameLabel.text = item.name
-            cell.cardNumberLabel.text = item.cardNumber
-            cell.valueLabel.text = "$\(item.valueInDollars)"
+            cell.bankAndExpDate.text = item.bank + " Debit Card" + " \u{2022} " + dateFormatter.string(from:item.expiration)
             return cell
         }
     }

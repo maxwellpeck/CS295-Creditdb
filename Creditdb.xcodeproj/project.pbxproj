@@ -118,8 +118,8 @@
 				5030D320242E78F3003701E1 /* ItemsViewController.swift */,
 				5030D322242E79A1003701E1 /* Item.swift */,
 				5030D324242E7A63003701E1 /* ItemStore.swift */,
-				5030D328242EAD92003701E1 /* ItemCell.swift */,
 				5030D32A242ED1E6003701E1 /* DetailViewController.swift */,
+				5030D328242EAD92003701E1 /* ItemCell.swift */,
 				502C0F3C244A1E960043E30F /* ItemCell2.swift */,
 			);
 			path = Creditdb;

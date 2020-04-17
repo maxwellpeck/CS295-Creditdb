@@ -32,8 +32,8 @@ class Item: NSObject, NSCoding {
         deleted = false
         securityCode = aDecoder.decodeObject(forKey: "securityCode") as! String
         expiration = aDecoder.decodeObject(forKey: "expiration") as! Date
-//        creditCard = aDecoder.decodeObject(forKey: "creditCard") as! Bool
-        creditCard = true
+        creditCard = aDecoder.decodeBool(forKey: "creditCard")
+//        creditCard = true
         super.init() }
     
     //------------------------------------------------------------------------------------------------

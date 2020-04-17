@@ -15,16 +15,17 @@ class ItemCell: UITableViewCell {
     //------------------------------------------------------------------------------------------------
     
     @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var cardNumberLabel: UILabel!
+    
+    @IBOutlet var bankAndExpDate: UILabel!
     @IBOutlet var valueLabel: UILabel!
     
     //------------------------------------------------------------------------------------------------
     
     override func awakeFromNib() {
-    super.awakeFromNib()
+        super.awakeFromNib()
         
-    nameLabel.adjustsFontForContentSizeCategory = true
-        cardNumberLabel.adjustsFontForContentSizeCategory = true
+        nameLabel.adjustsFontForContentSizeCategory = true
+        bankAndExpDate.adjustsFontForContentSizeCategory = true
         valueLabel.adjustsFontForContentSizeCategory = true
     }
     
