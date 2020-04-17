@@ -34,7 +34,6 @@ class Item: NSObject, NSCoding {
         securityCode = aDecoder.decodeObject(forKey: "securityCode") as! String
         expiration = aDecoder.decodeObject(forKey: "expiration") as! Date
         creditCard = aDecoder.decodeBool(forKey: "creditCard")
-//        creditCard = true
         super.init() }
     
     //------------------------------------------------------------------------------------------------
@@ -72,8 +71,8 @@ class Item: NSObject, NSCoding {
         if new {
             
             self.init(name: "New Card",
-                      cardNumber: "0000000000000000",
-                      valueInDollars: 0, deleted: false, bank: "Bank Name", securityCode: "000", expiration: Date(), creditCard: true)
+                      cardNumber: "XXXXXXXXXXXXXXXX",
+                      valueInDollars: 0, deleted: false, bank: "Bank Name", securityCode: "XXX", expiration: Date(), creditCard: true)
         } else {
             self.init(name: "", cardNumber: nil, valueInDollars: 0, deleted: false, bank: "", securityCode: "", expiration: Date(), creditCard: true)
         }

@@ -16,8 +16,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
             endingLineNumber = "27"
-            landmarkName = "Item"
-            landmarkType = "3">
+            landmarkName = "init(coder:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "80AFDD14-AC32-4971-B056-EDE6E09FFDC1 - d5bf73df59b3d52e"
